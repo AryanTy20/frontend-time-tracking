@@ -1,0 +1,142 @@
+@use "../colors" as *;
+
+.tracking {
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+
+  .container {
+    $column: 4;
+    width: 80vw;
+    display: grid;
+    grid-template: auto / repeat($column, 1fr);
+    gap: 1.5em;
+
+    .profile {
+      position: relative;
+      isolation: isolate;
+      grid-row: 1 / span 2;
+
+      .top {
+        position: relative;
+        z-index: 2;
+        height: 70%;
+        background-color: $Blue;
+        border-radius: 0.5em;
+        padding: 1.5em;
+
+        .pic {
+          position: relative;
+          height: 4.5em;
+          width: 4.5em;
+          border-radius: 50%;
+          border: solid white 2px;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-position: center;
+          }
+        }
+        .meta {
+          margin: 2em 0;
+          p {
+            margin: 0.3em 0;
+            font-size: 2.5rem;
+
+            &:first-child {
+              font-size: 1rem;
+              color: $PaleBlue;
+            }
+          }
+        }
+      }
+
+      .bottom {
+        z-index: 1;
+        margin-top: -0.5em;
+        background-color: $Dark-blue;
+        border-radius: 0.5em;
+        height: 32%;
+        padding: 2em 1.5em;
+
+        p {
+          font-size: 1.2rem;
+          cursor: pointer;
+          color: $Desaturated-blue;
+          transition: color 0.3s;
+
+          &:not(:first-child) {
+            margin: 0.8em 0;
+          }
+
+          &:hover {
+            color: white;
+          }
+        }
+
+        .active {
+          color: white;
+        }
+      }
+    }
+
+    .activity {
+      // width: 80%;
+      // margin-left: 1.5em;
+      border: solid red 1px;
+      // display: grid;
+      // grid-template: auto / repeat(3, 1fr);
+      // gap: 1.5em;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr !important;
+    padding: 4em 0;
+    width: 85% !important;
+
+    .profile {
+      grid-row: auto !important;
+      height: 10em;
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70% !important;
+
+        .pic {
+          height: 3.5em !important;
+          width: 3.5em !important;
+        }
+
+        .meta {
+          p {
+            font-size: 1.4rem !important;
+
+            &:first-child {
+              font-size: 0.8rem !important;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .bottom {
+        padding: 2em 2em 1.5em 2em !important;
+        height: 20% !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          font-size: 1rem !important;
+        }
+      }
+    }
+  }
+}

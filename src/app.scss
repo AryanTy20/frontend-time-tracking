@@ -1,0 +1,27 @@
+@use "./colors" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+@font-face {
+  font-family: rubik;
+  src: url("../assets/Rubik-Regular.ttf");
+}
+
+body {
+  font-size: 18px;
+  font-family: rubik;
+  background-color: $Very-dark-blue;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

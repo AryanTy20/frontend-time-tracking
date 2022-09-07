@@ -1,0 +1,94 @@
+@use "../../colors" as *;
+
+.card {
+  position: relative;
+  isolation: isolate;
+
+  .top {
+    height: 26%;
+    border-radius: 0.5em;
+    padding-right: 0.5em;
+    overflow: hidden;
+    isolation: isolate;
+
+    .icon {
+      z-index: 1;
+      margin-left: auto;
+      height: 4em;
+      width: 4em;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .bottom {
+    position: relative;
+    z-index: 2;
+    margin-top: -1em;
+    padding: 1.5em;
+    height: 82%;
+    background-color: $Dark-blue;
+    transition: all 0.3s;
+    border-radius: 0.5em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #34397b;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    .meta {
+      margin: 1.2em 0 0 0;
+      p {
+        font-size: 3rem;
+        &:last-child {
+          margin: 1em 0 0 0;
+          font-size: 1rem;
+          color: $PaleBlue;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    height: max-content;
+
+    .bottom {
+      padding: 1em !important;
+      margin-top: -2em;
+
+      .header {
+        font-size: 1rem !important;
+      }
+
+      .meta {
+        margin: 1em 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          font-size: 2rem;
+          &:last-child {
+            margin: 0 !important;
+            // font-size: rem;
+          }
+        }
+      }
+    }
+  }
+}
