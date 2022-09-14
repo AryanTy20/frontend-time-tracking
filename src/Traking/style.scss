@@ -94,6 +94,14 @@
   }
 }
 
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     grid-template-columns: 1fr !important;
@@ -138,5 +146,11 @@
         }
       }
     }
+  }
+
+  .attribution {
+    width: 80%;
+    padding: 1em;
+    margin: 1em auto;
   }
 }
